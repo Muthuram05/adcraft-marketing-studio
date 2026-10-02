@@ -19,7 +19,13 @@ npm run build
 npm run preview
 ```
 
-The production site is generated in `dist/`. It can be served by any static host. Routes use URL hashes, so deep links do not require server rewrites. HTTPS or localhost is needed for browser media functionality. Public deployment is not configured or performed.
+The production site is generated in `dist/`. It can be served by any static host. Routes use URL hashes, so deep links do not require server rewrites. HTTPS or localhost is needed for browser media functionality.
+
+## Netlify deployment
+
+`netlify.toml` configures Node.js 22, the `npm run build` command, and the `dist` publish directory. No environment variables or API keys are needed for this mock demo.
+
+Import the GitHub repository into Netlify and deploy its `main` branch. Netlify reads the build configuration from the repository. For a manual deployment, build locally and upload the contents of `dist/` through the Netlify dashboard. Browser data belongs to each site's origin: local demo edits do not transfer to the deployed website.
 
 ## Walkthrough
 
