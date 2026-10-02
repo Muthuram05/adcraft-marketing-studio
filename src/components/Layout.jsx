@@ -28,11 +28,11 @@ const items = [
   ["/dashboard", "Overview", LayoutGrid],
   ["/campaigns", "My campaigns", Megaphone],
   ["/studio", "Creative studio", Sparkles],
-  ["/library", "Media library", ImageIcon],
-  ["/brand", "Brand kit", Palette],
+  // ["/library", "Media library", ImageIcon],
+  // ["/brand", "Brand kit", Palette],
   ["/leads", "Leads", Users],
   ["/analytics", "Analytics", ChartNoAxesCombined],
-  ["/templates", "Templates", PanelsTopLeft],
+  // ["/templates", "Templates", PanelsTopLeft],
 ];
 export default function Layout({ route, children }) {
   const { state } = useApp();
