@@ -9,11 +9,15 @@
   --surface: #faf9fc;
   --green: #338b6a;
   --radius: 14px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.875rem;
+  --text-body: 1rem;
   font-family: "DM Sans", sans-serif;
   color: var(--ink);
   background: var(--surface);
   font-synthesis: none;
-  font-size: 14px;
+  font-size: 100%;
 }
 * {
   box-sizing: border-box;
@@ -66,7 +70,7 @@ h2 {
   letter-spacing: -0.45px;
 }
 h3 {
-  font-size: 15px;
+  font-size: var(--text-body);
   font-weight: 600;
   letter-spacing: -0.2px;
 }
@@ -123,9 +127,10 @@ button svg {
   border-radius: 8px;
   min-height: 40px;
   padding: 10px 16px;
-  font-size: 12px;
+  font-size: var(--text-md);
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.4;
   transition:
     background 0.15s,
     transform 0.15s;
@@ -187,7 +192,7 @@ button svg {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 12px;
+  font-size: var(--text-md);
   font-weight: 600;
 }
 .text-button:hover {
@@ -254,7 +259,7 @@ button svg {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 232px;
+  width: 252px;
   background: white;
   border-right: 1px solid var(--line);
   padding: 30px 18px 0;
@@ -296,13 +301,13 @@ button svg {
   flex: 1;
 }
 .workspace-switch b {
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 600;
   display: block;
 }
 .workspace-switch small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: var(--muted);
   margin-top: 3px;
 }
@@ -326,7 +331,7 @@ button svg {
   color: #827c90;
   padding: 11px 13px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: var(--text-md);
   font-weight: 500;
   position: relative;
 }
@@ -356,11 +361,11 @@ button svg {
   text-align: center;
   padding: 2px;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 .new-pill {
   margin-left: auto;
-  font-size: 8px;
+  font-size: var(--text-xs);
   padding: 3px 5px;
   color: var(--purple);
   background: #f1ebfd;
@@ -383,10 +388,10 @@ button svg {
 }
 .plan-card b {
   display: block;
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .plan-card p {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #9990ab;
   margin-top: 6px;
   line-height: 1.6;
@@ -398,7 +403,7 @@ button svg {
   background: white;
   border: 1px solid #eae2f8;
   border-radius: 6px;
-  font-size: 9px;
+  font-size: var(--text-md);
   color: var(--purple);
   padding: 8px;
   margin-top: 12px;
@@ -414,7 +419,7 @@ button svg {
   border: 0;
   background: none;
   color: #817b8d;
-  font-size: 11px;
+  font-size: var(--text-md);
   width: 100%;
 }
 .utility-link > svg:last-child:not(:first-child) {
@@ -438,7 +443,7 @@ button svg {
   background: #eee1d7;
   color: #795f54;
   border-radius: 50%;
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -448,23 +453,23 @@ button svg {
 .user-avatar.small {
   width: 30px;
   height: 30px;
-  font-size: 9px;
+  font-size: var(--text-xs);
 }
 .sidebar-profile div {
   flex: 1;
 }
 .sidebar-profile b {
-  font-size: 11px;
+  font-size: var(--text-md);
   display: block;
 }
 .sidebar-profile small {
-  font-size: 9px;
+  font-size: var(--text-xs);
   display: block;
   color: var(--muted);
   margin-top: 4px;
 }
 .app-main {
-  margin-left: 232px;
+  margin-left: 252px;
   min-width: 0;
   flex: 1;
 }
@@ -481,7 +486,7 @@ button svg {
   display: flex;
   align-items: center;
   gap: 17px;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #746e81;
 }
 .topbar-title > span:first-child {
@@ -503,7 +508,7 @@ button svg {
   background: #eae7ef;
 }
 .demo-indicator {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #9b94a7;
   display: flex;
   align-items: center;
@@ -542,7 +547,7 @@ button svg {
 }
 .page-head p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-top: 9px;
 }
 .head-actions {
@@ -551,10 +556,10 @@ button svg {
   align-items: center;
 }
 .head-actions > select {
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .breadcrumb {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a099ad;
   margin-bottom: 10px;
 }
@@ -578,7 +583,7 @@ button svg {
   align-items: center;
   gap: 6px;
   color: #7955b9;
-  font-size: 10px;
+  font-size: var(--text-sm);
   background: #fff8;
   padding: 6px 9px;
   border-radius: 5px;
@@ -592,7 +597,7 @@ button svg {
   margin-top: 15px;
 }
 .hero-copy > p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #867598;
   margin-top: 13px;
   line-height: 1.75;
@@ -615,7 +620,7 @@ button svg {
   flex: 1;
   width: 100%;
   padding: 8px 10px;
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .hero-prompt button {
   border: 0;
@@ -626,6 +631,7 @@ button svg {
   padding: 7px;
 }
 .hero-chips {
+  flex-wrap: wrap;
   display: flex;
   gap: 7px;
   margin-top: 11px;
@@ -639,7 +645,7 @@ button svg {
   color: #897797;
   padding: 5px 7px;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: var(--text-md);
 }
 .hero-art {
   position: relative;
@@ -774,7 +780,7 @@ button svg {
 }
 .section-title > div > span,
 .section-title > div > p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: var(--muted);
   display: block;
   margin-top: 5px;
@@ -798,7 +804,7 @@ button svg {
   justify-content: space-between;
   gap: 8px;
   color: #8a8397;
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .stat-top svg {
   color: #b5acc5;
@@ -817,14 +823,14 @@ button svg {
   flex-wrap: wrap;
 }
 .stat-bottom > span {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #45957a;
   display: flex;
   align-items: center;
   gap: 3px;
 }
 .stat-bottom small {
-  font-size: 8px;
+  font-size: var(--text-xs);
   color: #a39bab;
 }
 .creative-grid {
@@ -940,7 +946,7 @@ button svg {
   backdrop-filter: blur(6px);
   padding: 5px 7px;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: var(--text-xs);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -995,13 +1001,13 @@ button svg {
   min-width: 0;
 }
 .creative-card-body h3 {
-  font-size: 10px;
+  font-size: var(--text-sm);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .creative-card-body p {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #9d94a6;
   margin-top: 5px;
 }
@@ -1031,7 +1037,7 @@ button svg {
   background: white;
   width: 100%;
   padding: 11px;
-  font-size: 11px;
+  font-size: var(--text-body);
   display: flex;
   gap: 7px;
   justify-content: center;
@@ -1054,11 +1060,11 @@ button svg {
   width: 100%;
   white-space: nowrap;
   text-align: left;
-  font-size: 11px;
+  font-size: var(--text-md);
   background: white;
 }
 .data-table th {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #a097ac;
   font-weight: 500;
   padding: 13px 16px;
@@ -1090,12 +1096,12 @@ button svg {
 }
 .campaign-name-cell b {
   display: block;
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 500;
 }
 .campaign-name-cell small {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a297ad;
   margin-top: 5px;
 }
@@ -1106,7 +1112,7 @@ button svg {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 9px;
+  font-size: var(--text-xs);
   border-radius: 5px;
   padding: 5px 8px;
   background: #f2eff5;
@@ -1143,7 +1149,7 @@ button svg {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 500;
   white-space: nowrap;
 }
@@ -1161,7 +1167,7 @@ button svg {
   color: #3f77dc;
 }
 .channel-symbol.google {
-  font-size: 15px;
+  font-size: var(--text-body);
   color: #4285f4;
   background: #fff;
   border-color: #eee;
@@ -1183,7 +1189,7 @@ button svg {
   justify-content: space-between;
   padding: 17px 36px;
   border-top: 1px solid var(--line);
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #b0a9ba;
 }
 .app-footer > span:last-child {
@@ -1213,7 +1219,7 @@ button svg {
 .panel > h2 + .muted {
   margin-top: -8px;
   margin-bottom: 22px;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .panel-title {
   display: flex;
@@ -1222,7 +1228,7 @@ button svg {
   margin-bottom: 28px;
 }
 .panel-title p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: var(--muted);
   margin-top: 5px;
 }
@@ -1247,22 +1253,22 @@ button svg {
 .field select,
 .field textarea {
   width: 100%;
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .field-label {
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 600;
   display: block;
   color: #645c74;
 }
 .field-hint {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #aaa1b3;
   line-height: 1.7;
 }
 .field-error,
 .form-error {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #bd5252;
   line-height: 1.6;
 }
@@ -1284,7 +1290,7 @@ button svg {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #8a6eba;
   background: #f4eefe;
   padding: 6px 9px;
@@ -1294,7 +1300,7 @@ button svg {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #96909e;
 }
 .stepper {
@@ -1313,7 +1319,7 @@ button svg {
   gap: 10px;
   border: 0;
   background: none;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a8a0b4;
   white-space: nowrap;
   padding: 0;
@@ -1330,7 +1336,7 @@ button svg {
   justify-content: center;
   background: #f2eff5;
   color: #a59aae;
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 .step.current {
   color: var(--purple);
@@ -1397,13 +1403,13 @@ button svg {
   margin-bottom: 11px;
 }
 .wizard-aside > p {
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .aside-checks {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   margin: 26px 0;
 }
 .aside-checks span {
@@ -1468,11 +1474,11 @@ button svg {
 }
 .channel-option .channel {
   gap: 6px;
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 .channel-option > small {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-xs);
   color: #a99cb5;
   margin-top: 9px;
 }
@@ -1527,12 +1533,12 @@ button svg {
 }
 .creation-types b {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-md);
   margin-top: 11px;
   color: #554766;
 }
 .creation-types small {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #a395b0;
   margin-top: 5px;
 }
@@ -1554,7 +1560,7 @@ button svg {
   align-items: center;
 }
 .prompt-ideas > span {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a99bb7;
 }
 .prompt-ideas > button {
@@ -1566,7 +1572,7 @@ button svg {
   color: #9f88b2;
   padding: 5px 7px;
   border-radius: 5px;
-  font-size: 8px;
+  font-size: var(--text-md);
 }
 .product-upload {
   display: flex;
@@ -1587,20 +1593,20 @@ button svg {
   border-radius: 5px;
 }
 .product-upload > span {
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .product-upload > div > small {
   display: block;
   text-align: center;
   margin-top: 5px;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #b0a2bb;
 }
 .upload-inline {
   background: none;
   border: 0;
   color: var(--purple);
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 500;
   padding: 0;
 }
@@ -1608,7 +1614,7 @@ button svg {
   display: flex;
   justify-content: space-between;
   margin: 2px 0 20px;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a79ab2;
 }
 .generation-settings > span {
@@ -1625,7 +1631,7 @@ button svg {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a89db4;
   line-height: 1.8;
   margin-top: 13px;
@@ -1642,7 +1648,7 @@ button svg {
   color: #4f415e;
 }
 .inspiration-title p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #aa9bb6;
   margin-bottom: 23px;
 }
@@ -1671,7 +1677,7 @@ button svg {
   backdrop-filter: blur(8px);
   border-radius: 6px;
   padding: 10px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #877197;
 }
 .brand-context {
@@ -1691,10 +1697,10 @@ button svg {
   flex: 1;
 }
 .brand-context b {
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .brand-context p {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: var(--muted);
   margin-top: 3px;
 }
@@ -1704,11 +1710,11 @@ button svg {
   border-radius: 9px;
 }
 .creative-tip > b {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #8d73aa;
 }
 .creative-tip > p {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #ac9cba;
   margin-top: 7px;
 }
@@ -1755,7 +1761,7 @@ button svg {
   margin-bottom: 11px;
 }
 .generation-state > p {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: var(--muted);
 }
 .generation-progress {
@@ -1779,7 +1785,7 @@ button svg {
   display: flex;
   flex-direction: column;
   gap: 17px;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #b1a5bd;
 }
 .generation-steps > div {
@@ -1814,7 +1820,7 @@ button svg {
   margin-top: 14px;
 }
 .results-heading p {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: var(--muted);
   margin-top: 9px;
 }
@@ -1845,7 +1851,7 @@ button svg {
   border: 0;
   background: none;
   color: #a299ad;
-  font-size: 11px;
+  font-size: var(--text-md);
   padding: 13px 14px;
   position: relative;
   white-space: nowrap;
@@ -1880,7 +1886,7 @@ button svg {
   box-shadow: none;
   background: none;
   padding: 10px 0;
-  font-size: 10px;
+  font-size: var(--text-body);
   width: 170px;
 }
 .library-controls {
@@ -1896,16 +1902,16 @@ button svg {
   gap: 10px;
 }
 .library-controls select {
-  font-size: 10px;
+  font-size: var(--text-body);
   padding: 10px;
 }
 .library-count {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #84738f;
   margin-bottom: 18px;
 }
 .library-count > span {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #b5a7bf;
   margin-left: 8px;
 }
@@ -1918,7 +1924,7 @@ button svg {
   padding: 8px 6px;
 }
 .library-card-actions .text-button {
-  font-size: 9px;
+  font-size: var(--text-md);
 }
 .archive-list {
   margin-top: 28px;
@@ -1926,7 +1932,7 @@ button svg {
   background: white;
   border: 1px solid var(--line);
   border-radius: 9px;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a596b1;
 }
 .archive-list > div {
@@ -1947,13 +1953,13 @@ button svg {
   margin-bottom: 26px;
 }
 .templates-banner p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #9a83b2;
   margin-top: 5px;
 }
 .templates-banner > span {
   margin-left: auto;
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 .template-grid {
   display: grid;
@@ -2004,10 +2010,10 @@ button svg {
     serif;
 }
 .brand-logo-editor b {
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .brand-logo-editor p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: var(--muted);
   margin: 5px 0 12px;
 }
@@ -2035,7 +2041,7 @@ button svg {
   border-radius: 50%;
 }
 .brand-colors > span {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #9986a7;
 }
 .brand-preview {
@@ -2049,7 +2055,7 @@ button svg {
   margin-top: 24px;
 }
 .brand-preview p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: var(--muted);
   margin: 12px 0 20px;
 }
@@ -2075,7 +2081,7 @@ button svg {
 }
 .detail-layout > .panel > p {
   margin-top: 20px;
-  font-size: 12px;
+  font-size: var(--text-md);
   color: var(--muted);
 }
 .detail-list {
@@ -2093,11 +2099,11 @@ button svg {
   border: 0;
 }
 .detail-list dt {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a598b1;
 }
 .detail-list dd {
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 500;
   margin: 0;
 }
@@ -2109,7 +2115,7 @@ button svg {
   margin-bottom: 18px;
 }
 .demo-activity p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a68eb6;
   margin: 10px 0 18px;
 }
@@ -2124,11 +2130,11 @@ button svg {
   flex: 1;
 }
 .compact-lead b {
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .compact-lead small {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a99ab4;
   margin-top: 4px;
 }
@@ -2141,7 +2147,7 @@ button svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: var(--text-sm);
   flex-shrink: 0;
 }
 .lead-summary {
@@ -2182,7 +2188,7 @@ button svg {
 }
 .lead-summary small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #a494b0;
 }
 .lead-summary strong {
@@ -2196,11 +2202,11 @@ button svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a392b0;
 }
 .table-toolbar select {
-  font-size: 10px;
+  font-size: var(--text-body);
   max-width: 220px;
 }
 .lead-name {
@@ -2214,17 +2220,17 @@ button svg {
 }
 .lead-name b {
   display: block;
-  font-size: 11px;
+  font-size: var(--text-md);
   font-weight: 500;
 }
 .lead-name small {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a69ab0;
   margin-top: 5px;
 }
 .status-select {
-  font-size: 10px;
+  font-size: var(--text-body);
   border: 0;
   background: #f4effa;
   color: #9b7eb5;
@@ -2243,7 +2249,7 @@ button svg {
   flex-direction: column;
   gap: 15px;
   color: #a58daf;
-  font-size: 12px;
+  font-size: var(--text-md);
   margin: 25px 0;
 }
 .contact-details span {
@@ -2267,7 +2273,7 @@ button svg {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #a08bac;
 }
 .chart-legend i {
@@ -2277,7 +2283,7 @@ button svg {
   background: var(--purple);
 }
 .chart-legend small {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #b4a9bf;
 }
 .chart {
@@ -2297,7 +2303,7 @@ button svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .channel-progress {
   height: 6px;
@@ -2319,17 +2325,17 @@ button svg {
 }
 .top-campaign > span {
   color: #bcacc8;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .top-campaign > div {
   flex: 1;
 }
 .top-campaign b {
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .top-campaign small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #b0a0be;
   margin-top: 5px;
 }
@@ -2376,11 +2382,11 @@ button svg {
   flex: 1;
 }
 .connection-row b {
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .connection-row small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: var(--muted);
   margin-top: 5px;
 }
@@ -2393,10 +2399,10 @@ button svg {
   border-bottom: 1px solid var(--line);
 }
 .preference-row b {
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .preference-row p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: var(--muted);
   margin-top: 5px;
 }
@@ -2430,7 +2436,7 @@ button svg {
   align-items: flex-start;
   gap: 9px;
   color: #9c8caa;
-  font-size: 11px;
+  font-size: var(--text-md);
   background: #f7f3fb;
   border-radius: 8px;
   padding: 14px;
@@ -2455,11 +2461,11 @@ button svg {
   margin-bottom: 20px;
 }
 .review-main .panel > .section-title h2 {
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .review-main .panel > .section-title .btn {
   padding: 5px;
-  font-size: 10px;
+  font-size: var(--text-md);
 }
 .social-preview {
   max-width: 340px;
@@ -2489,18 +2495,18 @@ button svg {
   flex: 1;
 }
 .social-preview-head b {
-  font-size: 10px;
+  font-size: var(--text-sm);
   display: block;
 }
 .social-preview-head small {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-xs);
   margin-top: 4px;
   color: #a497b0;
 }
 .social-preview > p {
   padding: 0 13px 11px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   line-height: 1.5;
 }
 .creative-player {
@@ -2528,7 +2534,7 @@ button svg {
   background: #21172dbc;
   padding: 9px 14px;
   color: white;
-  font-size: 12px;
+  font-size: var(--text-md);
   backdrop-filter: blur(8px);
 }
 .creative-player > p {
@@ -2546,19 +2552,19 @@ button svg {
 }
 .social-preview-footer small {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-xs);
   color: #a89ab5;
 }
 .social-preview-footer b {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-xs);
   margin-top: 4px;
 }
 .social-preview-footer > span {
   padding: 7px;
   background: #eee8f3;
   color: #917d9f;
-  font-size: 9px;
+  font-size: var(--text-xs);
   border-radius: 4px;
   white-space: nowrap;
 }
@@ -2566,7 +2572,7 @@ button svg {
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: 10px;
+  font-size: var(--text-sm);
   margin-top: 19px;
 }
 .review-sidebar .channel-picker {
@@ -2579,7 +2585,7 @@ button svg {
   display: none;
 }
 .review-sidebar .channel-option .channel {
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .review-sidebar .check-box {
   top: 15px;
@@ -2596,7 +2602,7 @@ button svg {
 .budget-summary > div {
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: var(--text-sm);
   padding: 9px 0;
   color: #9e8fa9;
 }
@@ -2610,7 +2616,7 @@ button svg {
   align-items: center;
 }
 .budget-total > span {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #735d80;
 }
 .budget-total strong {
@@ -2623,7 +2629,7 @@ button svg {
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #9682a6;
   line-height: 1.7;
   margin-bottom: 17px;
@@ -2661,7 +2667,7 @@ button svg {
 }
 .launch-success > p {
   color: #a08aad;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .launch-summary {
   display: flex;
@@ -2686,7 +2692,7 @@ button svg {
 }
 .launch-summary > div > span {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #a693b2;
   margin-top: 12px;
 }
@@ -2707,7 +2713,7 @@ button svg {
   margin: 25px 0;
 }
 .checkout-total > span {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a68fbd;
 }
 .checkout-total > strong {
@@ -2718,7 +2724,7 @@ button svg {
   margin: 10px 0;
 }
 .checkout-total > small {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #af9abd;
 }
 .payment-methods {
@@ -2746,12 +2752,12 @@ button svg {
 }
 .payment-methods b {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #776383;
 }
 .payment-methods small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   margin-top: 6px;
 }
 .editor-content {
@@ -2777,7 +2783,7 @@ button svg {
 .editor-identity input {
   border: 0;
   padding: 3px 0;
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 600;
   background: transparent;
   width: 260px;
@@ -2788,7 +2794,7 @@ button svg {
   flex: 1;
 }
 .editor-identity .saved-indicator {
-  font-size: 9px;
+  font-size: var(--text-xs);
   margin-top: 5px;
 }
 .editor-actions {
@@ -2798,7 +2804,7 @@ button svg {
 }
 .editor-workspace {
   display: grid;
-  grid-template-columns: 65px 258px minmax(0, 1fr);
+  grid-template-columns: 72px 258px minmax(0, 1fr);
   min-height: 800px;
   background: #f1eff5;
 }
@@ -2820,7 +2826,7 @@ button svg {
   padding: 12px 3px;
   border-radius: 8px;
   color: #a598b0;
-  font-size: 8px;
+  font-size: var(--text-md);
 }
 .editor-toolbar > button.active {
   color: var(--purple);
@@ -2834,11 +2840,11 @@ button svg {
   max-height: 1000px;
 }
 .editor-properties > h2 {
-  font-size: 15px;
+  font-size: var(--text-body);
   line-height: 1.35;
 }
 .editor-properties > p {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #b0a1bd;
   margin: 9px 0 25px;
   line-height: 1.6;
@@ -2847,12 +2853,12 @@ button svg {
   margin-bottom: 17px;
 }
 .editor-properties .field-label {
-  font-size: 10px;
+  font-size: var(--text-md);
 }
 .editor-properties .field input,
 .editor-properties .field textarea,
 .editor-properties .field select {
-  font-size: 11px;
+  font-size: var(--text-body);
   padding: 9px;
 }
 .editor-properties .form-row {
@@ -2866,12 +2872,12 @@ button svg {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #9c8daa;
   margin-bottom: 12px;
 }
 .range-field b {
-  font-size: 9px;
+  font-size: var(--text-xs);
   background: #f5f1f9;
   padding: 3px 5px;
   border-radius: 4px;
@@ -2903,7 +2909,7 @@ button svg {
   border: 0 !important;
 }
 .color-input > span {
-  font-size: 8px;
+  font-size: var(--text-body);
   color: #ac9ab6;
 }
 .alignment-buttons {
@@ -2931,7 +2937,7 @@ button svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #9c8aaa;
   margin: 18px 0;
 }
@@ -2945,7 +2951,7 @@ button svg {
   background: none;
   padding: 0;
   color: #a993b7;
-  font-size: 9px;
+  font-size: var(--text-md);
 }
 .filter-presets img {
   width: 100%;
@@ -2966,7 +2972,7 @@ button svg {
   justify-content: space-between;
   align-items: center;
   color: #ab9db7;
-  font-size: 9px;
+  font-size: var(--text-xs);
   margin-bottom: 18px;
 }
 .stage-top > span:last-child {
@@ -2974,7 +2980,7 @@ button svg {
   padding: 5px 7px;
   border: 1px solid #e7dfef;
   border-radius: 4px;
-  font-size: 8px;
+  font-size: var(--text-xs);
 }
 .stage-top > span:last-child > span {
   margin: 0 6px;
@@ -3007,7 +3013,7 @@ button svg {
   padding: 12px;
   border-radius: 6px;
   color: #ba6363;
-  font-size: 11px;
+  font-size: var(--text-md);
 }
 .stage-bottom {
   display: flex;
@@ -3016,7 +3022,7 @@ button svg {
   align-items: center;
   margin: 22px 0;
   color: #ae9cbb;
-  font-size: 8px;
+  font-size: var(--text-xs);
 }
 .stage-bottom > span {
   display: flex;
@@ -3031,7 +3037,7 @@ button svg {
   background: #fff;
   border-radius: 6px;
   color: #9a7cb6;
-  font-size: 9px;
+  font-size: var(--text-xs);
   padding: 8px 10px;
 }
 .timeline {
@@ -3045,7 +3051,7 @@ button svg {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 22px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #a387b6;
 }
 .timeline-head > span {
@@ -3054,13 +3060,13 @@ button svg {
   align-items: center;
 }
 .timeline-head .text-button {
-  font-size: 9px;
+  font-size: var(--text-md);
 }
 .timeline-ruler {
   display: flex;
   justify-content: space-between;
   color: #b5a4c3;
-  font-size: 8px;
+  font-size: var(--text-xs);
   padding-bottom: 10px;
 }
 .timeline-track {
@@ -3092,7 +3098,7 @@ button svg {
   left: 6px;
   top: 7px;
   color: white;
-  font-size: 8px;
+  font-size: var(--text-md);
 }
 .playhead {
   position: absolute;
@@ -3145,17 +3151,17 @@ button svg {
   flex: 1;
 }
 .music-options b {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #997aaa;
 }
 .music-options small {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-xs);
   line-height: 1.5;
   margin-top: 4px;
 }
 .editor-properties .info-note {
-  font-size: 10px;
+  font-size: var(--text-sm);
   margin-top: 22px;
   line-height: 1.8;
 }
@@ -3176,20 +3182,20 @@ button svg {
   flex: 1;
 }
 .scene-list-item b {
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 .scene-list-item label {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a18ab1;
   margin-top: 6px;
 }
 .scene-list-item input {
   width: 44px;
   padding: 3px;
-  font-size: 10px;
+  font-size: var(--text-body);
 }
 .scene-list-item > div:last-child {
   display: flex;
@@ -3222,13 +3228,13 @@ button svg {
 }
 .scene-picker b {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-sm);
   padding: 8px 4px;
   line-height: 1.5;
 }
 .scene-picker small {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: var(--muted);
   padding: 0 4px 7px;
 }
@@ -3245,7 +3251,7 @@ button svg {
   margin-top: 18px;
 }
 .export-state small {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 .modal-backdrop {
@@ -3287,7 +3293,7 @@ button svg {
   margin-bottom: 12px;
 }
 .modal > .muted {
-  font-size: 12px;
+  font-size: var(--text-md);
   margin-bottom: 23px;
   max-width: 95%;
 }
@@ -3311,7 +3317,7 @@ button svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: var(--text-md);
   max-width: 90vw;
   animation: toast-in 0.2s ease;
 }
@@ -3360,7 +3366,7 @@ button svg {
   margin-bottom: 10px;
 }
 .empty p {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: var(--muted);
   max-width: 390px;
   margin-bottom: 22px;
@@ -3379,10 +3385,10 @@ button svg {
 }
 .profile-dropdown > b {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .profile-dropdown > small {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: var(--muted);
   display: block;
   margin: 6px 0 17px;
@@ -3393,7 +3399,7 @@ button svg {
   gap: 10px;
   border: 0;
   background: none;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #937b9f;
   padding: 10px 0;
   width: 100%;
@@ -3412,21 +3418,21 @@ button svg {
   border-radius: 10px;
 }
 .notification-item b {
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .notification-item p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: var(--muted);
   margin: 6px 0;
 }
 .notification-item small {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #b3a1be;
 }
 .help-steps {
   padding-left: 20px;
   color: #9b85ac;
-  font-size: 12px;
+  font-size: var(--text-md);
   line-height: 1.8;
 }
 .help-steps > li {
@@ -3452,7 +3458,7 @@ button svg {
   border-radius: 17px;
 }
 .app-loading p {
-  font-size: 13px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .fatal h1 {
@@ -3495,7 +3501,7 @@ button svg {
 .landing-nav nav {
   display: flex;
   gap: 34px;
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #91839c;
 }
 .landing-nav > div {
@@ -3526,7 +3532,7 @@ button svg {
 }
 .landing-hero > div > p {
   color: #9b8aa7;
-  font-size: 14px;
+  font-size: var(--text-body);
   max-width: 420px;
   line-height: 1.8;
   margin-bottom: 28px;
@@ -3534,14 +3540,14 @@ button svg {
 .landing-cta {
   height: 47px;
   padding: 0 20px;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .landing-small {
   display: flex;
   align-items: center;
   gap: 6px;
   color: #ac9bb8;
-  font-size: 10px;
+  font-size: var(--text-sm);
   margin-top: 15px;
 }
 .landing-trust {
@@ -3563,11 +3569,11 @@ button svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #746274;
 }
 .landing-trust > span {
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #ad9aba;
   line-height: 1.6;
 }
@@ -3624,7 +3630,7 @@ button svg {
   border-radius: 9px;
   padding: 15px;
   color: #9273a8;
-  font-size: 11px;
+  font-size: var(--text-md);
   z-index: 3;
   transform: rotate(-4deg);
 }
@@ -3638,7 +3644,7 @@ button svg {
   border-bottom: 1px solid #f1edf6;
 }
 .landing-platforms > span {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #aa98b7;
   max-width: 140px;
   line-height: 1.7;
@@ -3662,7 +3668,7 @@ button svg {
   letter-spacing: -1px;
 }
 .landing-features > p {
-  font-size: 13px;
+  font-size: var(--text-body);
   color: #aa96b8;
   margin-top: 15px;
 }
@@ -3683,7 +3689,7 @@ button svg {
   font-size: 18px;
 }
 .landing-features article p {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #a38daf;
   line-height: 1.8;
 }
@@ -3717,7 +3723,7 @@ button svg {
   border-radius: 50%;
   background: white;
   color: var(--purple);
-  font-size: 11px;
+  font-size: var(--text-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3725,11 +3731,11 @@ button svg {
   border: 1px solid #eadff6;
 }
 .landing-how h3 {
-  font-size: 14px;
+  font-size: var(--text-body);
   margin: 4px 0 8px;
 }
 .landing-how p {
-  font-size: 11px;
+  font-size: var(--text-md);
   color: #a28bae;
   line-height: 1.7;
 }
@@ -3755,11 +3761,11 @@ button svg {
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  font-size: 13px;
+  font-size: var(--text-body);
   padding: 0;
 }
 .landing-faq p {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #a189ae;
   margin-top: 14px;
   max-width: 650px;
@@ -3773,11 +3779,11 @@ button svg {
 }
 .landing-footer > span {
   color: #a593b1;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .landing-footer small {
   color: #b5a5c0;
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 @media (min-width: 1450px) {
   .hero-art-card.front {
@@ -3812,16 +3818,16 @@ button svg {
     max-width: 420px;
   }
   .hero-copy > p {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .hero-chips button {
-    font-size: 9px;
+    font-size: var(--text-md);
   }
   .creative-card-body h3 {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .creative-card-body p {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .hero-art .orb-one {
     left: 50px;
@@ -3838,12 +3844,12 @@ button svg {
 }
 @media (max-width: 1200px) {
   .sidebar {
-    width: 210px;
+    width: 232px;
     padding-left: 14px;
     padding-right: 14px;
   }
   .app-main {
-    margin-left: 210px;
+    margin-left: 232px;
   }
   .page-content {
     padding: 28px 25px;
@@ -3853,7 +3859,7 @@ button svg {
   }
   .main-nav > a {
     padding-left: 10px;
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .main-nav > a.active:before {
     left: -14px;
@@ -3920,13 +3926,13 @@ button svg {
     padding: 15px;
   }
   .stat-top {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .stat-card > strong {
     font-size: 24px;
   }
   .stat-bottom small {
-    font-size: 7px;
+    font-size: var(--text-xs);
   }
   .creative-grid {
     gap: 12px;
@@ -3956,7 +3962,7 @@ button svg {
     padding: 0;
   }
   .editor-workspace {
-    grid-template-columns: 55px 230px minmax(0, 1fr);
+    grid-template-columns: 72px 230px minmax(0, 1fr);
   }
   .editor-properties {
     padding: 23px 15px;
@@ -3970,11 +3976,11 @@ button svg {
   }
   .editor-actions .btn {
     padding: 9px;
-    font-size: 10px;
+    font-size: var(--text-md);
   }
   .editor-identity input {
     width: 200px;
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .editor-top {
     padding: 14px 15px;
@@ -4011,15 +4017,15 @@ button svg {
     gap: 10px;
   }
   .lead-summary small {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
 }
 @media (max-width: 1000px) {
   .sidebar {
-    width: 190px;
+    width: 220px;
   }
   .app-main {
-    margin-left: 190px;
+    margin-left: 220px;
   }
   .sidebar-logo {
     padding-left: 4px;
@@ -4039,7 +4045,7 @@ button svg {
     padding: 8px;
   }
   .workspace-switch b {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .new-pill {
     display: none;
@@ -4051,10 +4057,10 @@ button svg {
     padding: 12px;
   }
   .plan-card b {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .plan-card button {
-    font-size: 8px;
+    font-size: var(--text-md);
   }
   .page-content {
     padding: 25px 20px;
@@ -4069,7 +4075,7 @@ button svg {
     font-size: 23px;
   }
   .page-head p {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .head-actions {
     flex-wrap: wrap;
@@ -4118,13 +4124,13 @@ button svg {
     flex-wrap: wrap;
   }
   .hero-chips button {
-    font-size: 7px;
+    font-size: var(--text-md);
   }
   .hero-prompt {
     max-width: 285px;
   }
   .hero-prompt input {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .hero-art .orb-one {
     width: 260px;
@@ -4165,8 +4171,11 @@ button svg {
     display: none;
   }
   .studio-layout {
-    grid-template-columns: minmax(0, 1fr) 210px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
+  }
+  .studio-inspiration {
+    display: none;
   }
   .studio-form {
     padding: 20px;
@@ -4178,19 +4187,19 @@ button svg {
     height: 275px;
   }
   .prompt-ideas button {
-    font-size: 7px;
+    font-size: var(--text-md);
   }
   .studio-layout .form-row {
     gap: 10px;
   }
   .studio-layout .field select {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .studio-layout .creation-types small {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .review-layout {
-    grid-template-columns: 1fr 290px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 15px;
   }
   .review-main .panel,
@@ -4216,13 +4225,13 @@ button svg {
     padding: 0;
   }
   .editor-workspace {
-    grid-template-columns: 49px 205px minmax(0, 1fr);
+    grid-template-columns: 72px 205px minmax(0, 1fr);
   }
   .editor-properties {
     padding: 20px 12px;
   }
   .editor-properties > h2 {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .editor-properties .form-row {
     grid-template-columns: 1fr;
@@ -4234,7 +4243,7 @@ button svg {
     gap: 3px;
   }
   .editor-actions .btn {
-    font-size: 9px;
+    font-size: var(--text-md);
     padding: 8px;
   }
   .canvas-wrap {
@@ -4273,7 +4282,7 @@ button svg {
     left: 185px;
   }
   .landing-floating {
-    font-size: 9px;
+    font-size: var(--text-xs);
     left: 10px;
     bottom: 24px;
   }
@@ -4299,7 +4308,7 @@ button svg {
     transform: translateX(-100%);
     visibility: hidden;
     transition: transform 0.2s;
-    width: 232px;
+    width: 260px;
   }
   .sidebar.open {
     transform: translateX(0);
@@ -4326,7 +4335,7 @@ button svg {
   }
   .topbar-title {
     gap: 12px;
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .topbar-slash {
     display: none;
@@ -4335,7 +4344,7 @@ button svg {
     gap: 11px;
   }
   .demo-indicator {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .topbar-right > .icon-button:first-of-type {
     display: none;
@@ -4352,11 +4361,11 @@ button svg {
     max-width: 420px;
   }
   .page-head p {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .head-actions .btn {
     padding: 9px 10px;
-    font-size: 10px;
+    font-size: var(--text-md);
   }
   .head-actions .soft-label {
     display: none;
@@ -4372,16 +4381,16 @@ button svg {
     font-size: 34px;
   }
   .hero-copy > p {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .hero-tag {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .hero-chips button {
-    font-size: 7px;
+    font-size: var(--text-md);
   }
   .hero-prompt input {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .hero-art-card.front {
     left: 38px;
@@ -4418,34 +4427,34 @@ button svg {
     padding: 12px;
   }
   .stat-top {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .stat-card > strong {
     font-size: 23px;
   }
   .stat-bottom {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .creative-grid {
     grid-template-columns: repeat(3, 1fr);
   }
   .creative-card-body h3 {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .creative-card-body p {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .creative-card-body {
     padding: 12px 8px;
   }
   .section-title h2 {
-    font-size: 15px;
+    font-size: var(--text-body);
   }
   .section-title > div > span {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .studio-layout {
-    grid-template-columns: 1fr 210px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
   }
   .studio-inspiration .inspiration-image {
@@ -4455,10 +4464,10 @@ button svg {
     padding: 15px 12px;
   }
   .studio-form .creation-types small {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .studio-layout .field select {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .studio-form {
     padding: 20px;
@@ -4468,7 +4477,7 @@ button svg {
   }
   .step {
     gap: 7px;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .step-line {
     margin: 0 15px;
@@ -4477,14 +4486,14 @@ button svg {
     font-size: 17px;
   }
   .review-layout {
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 15px;
   }
   .editor-content {
     padding: 0;
   }
   .editor-workspace {
-    grid-template-columns: 49px 210px minmax(0, 1fr);
+    grid-template-columns: 72px 210px minmax(0, 1fr);
   }
   .editor-stage {
     padding: 16px 15px 0;
@@ -4495,10 +4504,10 @@ button svg {
     padding: 15px;
   }
   .timeline-head > span {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .timeline-head .text-button {
-    font-size: 8px;
+    font-size: var(--text-md);
   }
   .canvas-wrap {
     height: 405px;
@@ -4513,7 +4522,7 @@ button svg {
     width: 230px;
   }
   .editor-actions .btn {
-    font-size: 10px;
+    font-size: var(--text-md);
   }
   .brand-layout {
     grid-template-columns: 1fr 210px;
@@ -4550,10 +4559,10 @@ button svg {
     letter-spacing: -1.8px;
   }
   .landing-hero > div > p {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .landing-cta {
-    font-size: 10px;
+    font-size: var(--text-sm);
     padding: 0 12px;
     gap: 5px;
   }
@@ -4573,7 +4582,7 @@ button svg {
     top: 104px;
   }
   .landing-floating {
-    font-size: 8px;
+    font-size: var(--text-xs);
     padding: 12px;
     left: 0;
   }
@@ -4599,10 +4608,10 @@ button svg {
     padding: 19px;
   }
   .landing-features article h3 {
-    font-size: 15px;
+    font-size: var(--text-body);
   }
   .landing-features article p {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .landing-how {
     grid-template-columns: 1fr 1fr;
@@ -4613,13 +4622,13 @@ button svg {
     font-size: 29px;
   }
   .landing-how .soft-label {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .landing-how h3 {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .landing-how p {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .landing-footer {
     padding: 23px;
@@ -4629,6 +4638,9 @@ button svg {
   }
 }
 @media (max-width: 570px) {
+  .demo-indicator {
+    display: none;
+  }
   h1 {
     font-size: 24px;
   }
@@ -4643,7 +4655,7 @@ button svg {
     line-height: 1.2;
   }
   .page-head p {
-    font-size: 11px;
+    font-size: var(--text-body);
     max-width: 320px;
     line-height: 1.7;
   }
@@ -4668,7 +4680,7 @@ button svg {
     line-height: 1.03;
   }
   .hero-copy > p {
-    font-size: 11px;
+    font-size: var(--text-md);
     max-width: 260px;
   }
   .hero-prompt {
@@ -4676,13 +4688,13 @@ button svg {
     margin-top: 18px;
   }
   .hero-prompt input {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .hero-chips {
     gap: 7px;
   }
   .hero-chips button {
-    font-size: 8px;
+    font-size: var(--text-md);
     padding: 6px;
   }
   .hero-art {
@@ -4754,7 +4766,7 @@ button svg {
     padding: 17px;
   }
   .stat-top {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .stat-top svg {
     display: block;
@@ -4766,7 +4778,7 @@ button svg {
   }
   .stat-bottom small {
     display: block;
-    font-size: 7px;
+    font-size: var(--text-xs);
   }
   .creative-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4776,36 +4788,36 @@ button svg {
     display: block;
   }
   .creative-card-body h3 {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .creative-card-body p {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .section-title {
     align-items: center;
     margin-top: 25px;
   }
   .section-title h2 {
-    font-size: 15px;
+    font-size: var(--text-body);
     max-width: 245px;
   }
   .section-title > div > span {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .section-title .text-button {
-    font-size: 9px;
+    font-size: var(--text-md);
     gap: 4px;
     white-space: nowrap;
   }
   .campaign-name-cell b {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .data-table th,
   .data-table td {
     padding: 12px;
   }
   .app-footer {
-    font-size: 8px;
+    font-size: var(--text-xs);
     padding: 17px 16px;
   }
   .app-footer > span:first-child {
@@ -4821,16 +4833,22 @@ button svg {
     padding: 19px 12px;
   }
   .step {
-    font-size: 8px;
+    font-size: var(--text-md);
     gap: 5px;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    white-space: normal;
+    text-align: center;
   }
   .step > span {
     width: 23px;
     height: 23px;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .step-line {
-    margin: 0 8px;
+    margin: 0 4px;
+    flex: 0 0 12px;
   }
   .wizard-form {
     padding: 22px 19px;
@@ -4842,7 +4860,7 @@ button svg {
     font-size: 16px;
   }
   .panel-title p {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .form-row {
     gap: 12px;
@@ -4850,7 +4868,7 @@ button svg {
   .field input,
   .field textarea,
   .field select {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .form-row.three {
     gap: 8px;
@@ -4866,17 +4884,17 @@ button svg {
     padding: 14px 8px 11px;
   }
   .channel-option .channel {
-    font-size: 9px;
+    font-size: var(--text-xs);
     gap: 4px;
     flex-direction: column;
     align-items: flex-start;
   }
   .channel-option > small {
-    font-size: 7px;
+    font-size: var(--text-xs);
     line-height: 1.6;
   }
   .form-footer .btn {
-    font-size: 10px;
+    font-size: var(--text-md);
     padding: 10px 12px;
   }
   .studio-layout {
@@ -4892,16 +4910,16 @@ button svg {
     margin-bottom: 22px;
   }
   .studio-form .creation-types small {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .studio-layout .field select {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .prompt-ideas > button {
-    font-size: 8px;
+    font-size: var(--text-md);
   }
   .prompt-ideas > span {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .generation-state {
     padding: 50px 20px;
@@ -4911,10 +4929,10 @@ button svg {
     font-size: 20px;
   }
   .generation-state > p {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .generation-steps {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .results-heading {
     display: block;
@@ -4931,10 +4949,10 @@ button svg {
     gap: 24px;
   }
   .results-grid .creative-card-body h3 {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .results-grid .creative-card-body p {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .results-footer {
     flex-direction: column;
@@ -4944,7 +4962,7 @@ button svg {
     gap: 10px;
   }
   .results-footer .btn {
-    font-size: 10px;
+    font-size: var(--text-md);
   }
   .results-footer > .btn {
     align-self: flex-start;
@@ -4969,17 +4987,17 @@ button svg {
   }
   .tabs > button {
     padding: 12px 10px;
-    font-size: 10px;
+    font-size: var(--text-md);
   }
   .library-controls > div:not(.tabs) select {
-    font-size: 9px;
+    font-size: var(--text-body);
     max-width: 110px;
   }
   .library-count {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .library-count > span {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .template-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -4989,16 +5007,16 @@ button svg {
     padding: 12px;
   }
   .template-card .soft-label {
-    font-size: 8px;
+    font-size: var(--text-xs);
     padding: 4px;
   }
   .template-card h3 {
-    font-size: 12px;
+    font-size: var(--text-md);
     line-height: 1.5;
     margin: 10px 0;
   }
   .template-card .btn {
-    font-size: 9px;
+    font-size: var(--text-md);
     min-height: 32px;
     padding: 8px 10px;
   }
@@ -5010,7 +5028,7 @@ button svg {
     font-size: 16px;
   }
   .templates-banner p {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .templates-banner > span {
     display: none;
@@ -5035,17 +5053,19 @@ button svg {
     height: 70px;
   }
   .review-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .review-main .panel,
   .review-sidebar .panel {
     padding: 22px;
   }
   .review-sidebar .channel-picker {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
   .review-sidebar .channel-option .channel {
-    font-size: 9px;
+    font-size: var(--text-md);
+    flex-direction: row;
+    align-items: center;
   }
   .review-sidebar .check-box {
     top: 6px;
@@ -5067,14 +5087,14 @@ button svg {
     width: 100%;
   }
   .launch-summary h3 {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .launch-summary .channel {
-    font-size: 9px;
+    font-size: var(--text-xs);
     gap: 4px;
   }
   .launch-success > p {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .detail-layout {
     grid-template-columns: 1fr;
@@ -5093,7 +5113,7 @@ button svg {
     padding: 8px;
   }
   .lead-summary small {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .lead-summary strong {
     font-size: 24px;
@@ -5102,11 +5122,11 @@ button svg {
     padding: 13px;
   }
   .table-toolbar > span {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .table-toolbar select {
     max-width: 160px;
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .analytics-bottom {
     grid-template-columns: 1fr;
@@ -5134,13 +5154,13 @@ button svg {
     gap: 10px;
   }
   .connection-row b {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .connection-row small {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .connection-row > .btn {
-    font-size: 9px;
+    font-size: var(--text-md);
     padding: 8px;
   }
   .connection-row .channel-symbol {
@@ -5166,7 +5186,7 @@ button svg {
   }
   .editor-identity input {
     width: 280px;
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .editor-actions {
     width: 100%;
@@ -5177,7 +5197,7 @@ button svg {
     margin-right: auto;
   }
   .editor-actions .btn {
-    font-size: 10px;
+    font-size: var(--text-md);
     padding: 8px 10px;
   }
   .editor-workspace {
@@ -5193,15 +5213,15 @@ button svg {
     height: 420px;
   }
   .stage-top {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .stage-bottom {
-    font-size: 9px;
+    font-size: var(--text-xs);
     margin: 15px 0;
   }
   .stage-bottom > span:first-child {
     display: flex;
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .timeline {
     margin-left: -18px;
@@ -5209,16 +5229,16 @@ button svg {
     padding: 18px;
   }
   .timeline-head > span {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .timeline-head .text-button {
-    font-size: 10px;
+    font-size: var(--text-md);
   }
   .editor-toolbar {
     order: 1;
     flex-direction: row;
     border-top: 1px solid var(--line);
-    padding: 8px 15px;
+    padding: 8px;
     justify-content: space-around;
     position: sticky;
     top: 0;
@@ -5226,8 +5246,9 @@ button svg {
     gap: 5px;
   }
   .editor-toolbar > button {
-    font-size: 9px;
-    padding: 10px 13px;
+    font-size: var(--text-md);
+    padding: 10px 4px;
+    min-width: 0;
     flex: 1;
   }
   .editor-properties {
@@ -5240,25 +5261,25 @@ button svg {
     font-size: 18px;
   }
   .editor-properties > p {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .editor-properties .field-label {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .editor-properties .field input,
   .editor-properties .field select,
   .editor-properties .field textarea {
-    font-size: 13px;
+    font-size: var(--text-body);
     padding: 12px;
   }
   .editor-properties .form-row {
     grid-template-columns: 1fr 1fr;
   }
   .range-field > span {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .range-field b {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .range-field {
     margin: 26px 0;
@@ -5267,32 +5288,32 @@ button svg {
     height: 90px;
   }
   .filter-presets > button {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .color-input > span {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .alignment-buttons {
     max-width: 250px;
   }
   .toggle-row {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .music-options b {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .music-options small {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .scene-list-item > img {
     width: 50px;
     height: 65px;
   }
   .scene-list-item b {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .scene-list-item label {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .scene-list-item > div:last-child {
     flex-direction: row;
@@ -5312,11 +5333,11 @@ button svg {
     max-width: 90%;
   }
   .modal > .muted {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .toast {
     width: calc(100% - 32px);
-    font-size: 11px;
+    font-size: var(--text-md);
     bottom: 16px;
   }
   .toast > button {
@@ -5327,7 +5348,7 @@ button svg {
     padding: 0 20px;
   }
   .landing-nav .btn {
-    font-size: 10px;
+    font-size: var(--text-md);
     padding: 8px 10px;
   }
   .landing-hero {
@@ -5342,22 +5363,22 @@ button svg {
     margin: 23px 0;
   }
   .landing-hero > div > p {
-    font-size: 13px;
+    font-size: var(--text-body);
     max-width: 330px;
     margin: 0 auto 24px;
   }
   .landing-hero .hero-tag {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .landing-cta {
     height: 44px;
-    font-size: 11px;
+    font-size: var(--text-md);
     padding: 0 18px;
     gap: 8px;
   }
   .landing-small {
     justify-content: center;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .landing-trust {
     justify-content: center;
@@ -5388,17 +5409,17 @@ button svg {
   .landing-floating {
     bottom: 11px;
     left: 40px;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .landing-platforms {
     padding: 25px 15px;
     gap: 21px;
   }
   .landing-platforms b {
-    font-size: 15px;
+    font-size: var(--text-body);
   }
   .landing-platforms > span {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .landing-features {
     padding: 45px 22px;
@@ -5408,7 +5429,7 @@ button svg {
     line-height: 1.25;
   }
   .landing-features > p {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .landing-features > div {
     grid-template-columns: 1fr;
@@ -5421,7 +5442,7 @@ button svg {
     font-size: 18px;
   }
   .landing-features article p {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .landing-how {
     grid-template-columns: 1fr;
@@ -5435,10 +5456,10 @@ button svg {
     margin: 26px 0;
   }
   .landing-how h3 {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .landing-how p {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .landing-faq {
     padding: 45px 24px;
@@ -5448,18 +5469,18 @@ button svg {
     line-height: 1.3;
   }
   .landing-faq button {
-    font-size: 12px;
+    font-size: var(--text-md);
     gap: 10px;
   }
   .landing-faq p {
-    font-size: 11px;
+    font-size: var(--text-md);
   }
   .landing-footer {
     padding: 22px;
     gap: 15px;
   }
   .landing-footer small {
-    font-size: 8px;
+    font-size: var(--text-xs);
     text-align: right;
     max-width: 125px;
   }
