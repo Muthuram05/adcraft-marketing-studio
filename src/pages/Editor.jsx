@@ -91,23 +91,18 @@ export default function Editor({ id }) {
     [exporting, setExporting] = useState(false),
     [progress, setProgress] = useState(0),
     [addScene, setAddScene] = useState(false),
-    [error, setError] = useState(""),
-    [saved, setSaved] = useState(true);
+    [error, setError] = useState("");
   const abort = useRef();
   useEffect(() => () => abort.current?.abort(), []);
   useEffect(() => {
     if (!asset) return;
-    setSaved(false);
-    const timer = setTimeout(() => {
-      patchAsset(id, {
-        edit: asset.edit,
-        name: asset.name,
-        src: asset.src,
-        poster: asset.poster,
-      });
-      setSaved(true);
-    }, 500);
-    return () => clearTimeout(timer);
+    // Keep workspace state current before navigation can unmount the editor.
+    patchAsset(id, {
+      edit: asset.edit,
+      name: asset.name,
+      src: asset.src,
+      poster: asset.poster,
+    });
   }, [asset]);
   if (!asset)
     return (
@@ -146,7 +141,6 @@ export default function Editor({ id }) {
       src: asset.src,
       poster: asset.poster,
     });
-    setSaved(true);
     notify("Creative saved to your library.");
   }
   async function download() {
@@ -220,7 +214,7 @@ export default function Editor({ id }) {
             />
             <span className="saved-indicator">
               <Check size={12} />
-              {saved ? "All changes saved" : "Saving changes…"}
+              All changes saved
             </span>
           </div>
         </div>

@@ -194,6 +194,7 @@ export default function Studio({
                 key={a.id}
                 asset={state.assets.find((x) => x.id === a.id) || a}
                 onSelect={choose}
+                onEdit={onEdit}
                 selected={selected === a.id}
               />
             ))}

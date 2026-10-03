@@ -48,9 +48,9 @@ export default function App() {
   else if (route === "/studio") page = <Studio key={hash} />;
   else if (route === "/create") page = <Create />;
   else if (route.startsWith("/editor/"))
-    page = <Editor id={route.split("/")[2]} key={route} />;
+    page = <Editor id={route.split("/")[2]} key={hash} />;
   else if (route.startsWith("/review/"))
-    page = <Review id={route.split("/")[2]} key={route} />;
+    page = <Review id={route.split("/")[2]} key={hash} />;
   else if (route === "/library") page = <Library />;
   else if (route === "/templates") page = <Library templates />;
   else if (route === "/brand") page = <Brand />;

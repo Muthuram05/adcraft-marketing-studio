@@ -71,7 +71,11 @@ export default function Review({ id }) {
     [choose, setChoose] = useState(false),
     [error, setError] = useState("");
   const asset = state.assets.find((a) => a.id === campaign.assetId);
-  const patch = (key, value) => setCampaign((c) => ({ ...c, [key]: value }));
+  const patch = (key, value) => {
+    setCampaign((c) => ({ ...c, [key]: value }));
+    setApproved(false);
+    setError("");
+  };
   const total = Number(campaign.dailyBudget) * Number(campaign.days);
   function saveDraft() {
     const err = validateCampaign(campaign);

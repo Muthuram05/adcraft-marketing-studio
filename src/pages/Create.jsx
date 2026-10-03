@@ -19,7 +19,7 @@ import {
   readUpload,
   navigate,
 } from "../components/UI";
-import { uid } from "../data";
+import { uid, validateAudience } from "../data";
 import Studio from "./Studio";
 export default function Create() {
   const { state, update, notify } = useApp();
@@ -60,19 +60,9 @@ export default function Create() {
       );
       return;
     }
-    if (
-      step === 1 &&
-      (!form.channels.length ||
-        !form.location.trim() ||
-        !Number.isInteger(Number(form.ageMin)) ||
-        Number(form.ageMin) < 18 ||
-        Number(form.ageMax) > 65 ||
-        Number(form.ageMin) > Number(form.ageMax) ||
-        Number(form.dailyBudget) < 100)
-    ) {
-      setError(
-        "Choose a channel, location, valid age range and a daily budget of at least ₹100.",
-      );
+    const audienceError = step === 1 ? validateAudience(form) : "";
+    if (audienceError) {
+      setError(audienceError);
       return;
     }
     setError("");

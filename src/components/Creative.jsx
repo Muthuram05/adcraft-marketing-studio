@@ -74,18 +74,18 @@ export function CreativeVisual({ asset, className = "", onClick }) {
 export function CreativeCard({
   asset,
   onSelect,
+  onEdit,
   selected = false,
   compact = false,
 }) {
   const { patchAsset } = useApp();
+  const edit = () => (onEdit ? onEdit(asset) : navigate("/editor/" + asset.id));
   return (
     <article className={"creative-card " + (selected ? "chosen" : "")}>
       <div className="creative-card-picture">
         <CreativeVisual
           asset={asset}
-          onClick={() =>
-            onSelect ? onSelect(asset) : navigate("/editor/" + asset.id)
-          }
+          onClick={() => (onSelect ? onSelect(asset) : edit())}
         />
         <span className="media-type">
           {asset.type === "video" ? (
@@ -108,7 +108,7 @@ export function CreativeCard({
           <button
             className="play-bubble"
             aria-label={"Play " + asset.name}
-            onClick={() => navigate("/editor/" + asset.id)}
+            onClick={edit}
           >
             <Play size={18} fill="currentColor" />
           </button>
@@ -129,7 +129,7 @@ export function CreativeCard({
         <button
           className="icon-button"
           aria-label={"Edit " + asset.name}
-          onClick={() => navigate("/editor/" + asset.id)}
+          onClick={edit}
         >
           <Pencil size={15} />
         </button>
@@ -279,7 +279,6 @@ export function CanvasPreview({
 export function CreativePlayer({ asset }) {
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState("");
-  if (asset.type !== "video") return <CreativeVisual asset={asset} />;
   return (
     <div className="creative-player">
       <CanvasPreview
@@ -288,16 +287,18 @@ export function CreativePlayer({ asset }) {
         seek={asset.edit.trimStart || 0}
         onError={setError}
       />
-      <button
-        className="player-control"
-        aria-label={
-          playing ? "Pause campaign preview" : "Play campaign preview"
-        }
-        onClick={() => setPlaying(!playing)}
-      >
-        {playing ? <Pause size={17} /> : <Play size={17} />}{" "}
-        {playing ? "Pause" : "Play video"}
-      </button>
+      {asset.type === "video" && (
+        <button
+          className="player-control"
+          aria-label={
+            playing ? "Pause campaign preview" : "Play campaign preview"
+          }
+          onClick={() => setPlaying(!playing)}
+        >
+          {playing ? <Pause size={17} /> : <Play size={17} />}{" "}
+          {playing ? "Pause" : "Play video"}
+        </button>
+      )}
       {error && <p role="alert">{error}</p>}
     </div>
   );

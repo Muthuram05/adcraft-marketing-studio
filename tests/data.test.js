@@ -6,6 +6,7 @@ import {
   getStock,
   generateAssets,
   validateCampaign,
+  validateAudience,
   campaignTotals,
   csv,
   stock,
@@ -75,6 +76,7 @@ test("approval validation rejects missing assets, channels, invalid budgets and 
     channels: ["Meta", "Google"],
     dailyBudget: 500,
     days: 7,
+    location: "Chennai, India",
     ageMin: 21,
     ageMax: 45,
   };
@@ -92,12 +94,44 @@ test("approval validation rejects missing assets, channels, invalid budgets and 
     { ageMin: 17 },
     { ageMin: 45, ageMax: 21 },
     { ageMax: 66 },
+    { ageMax: 45.5 },
+    { location: " " },
   ])
     assert.notEqual(
       validateCampaign({ ...valid, ...change }),
       "",
       JSON.stringify(change),
     );
+});
+
+test("campaign setup and approval use the same audience validation", () => {
+  const audience = {
+    channels: ["Meta", "Google"],
+    location: "Chennai",
+    dailyBudget: 500,
+    days: 14,
+    ageMin: 21,
+    ageMax: 45,
+  };
+  assert.equal(validateAudience(audience), "");
+  for (const change of [
+    { ageMax: 45.5 },
+    { ageMin: "" },
+    { ageMax: "" },
+    { ageMax: undefined },
+    { ageMin: undefined },
+    { ageMin: 50 },
+    { dailyBudget: Infinity },
+    { channels: [] },
+    { location: " " },
+  ]) {
+    const invalid = { ...audience, ...change };
+    assert.notEqual(validateAudience(invalid), "", JSON.stringify(change));
+    assert.equal(
+      validateCampaign({ ...invalid, name: "QA", assetId: "asset-coffee" }),
+      validateAudience(invalid),
+    );
+  }
 });
 
 test("dashboard totals reflect campaign spend and performance", () => {

@@ -1,4 +1,4 @@
-import { saveBlob } from "./data";
+import { saveBlob } from "./data.js";
 export const dimensions = (format) =>
   format === "1:1"
     ? [720, 720]
@@ -75,16 +75,34 @@ export function drawCreative(canvas, source, edit, time = 0) {
     ctx.textAlign = edit.align;
     const x =
       edit.align === "center" ? w / 2 : edit.align === "right" ? w - pad : pad;
-    const fs = edit.fontSize * scale;
-    ctx.font = `700 ${fs}px "${edit.font}",sans-serif`;
-    const lines = wrap(ctx, edit.headline, w - 2 * pad, 4);
-    const lh = fs * 1.08;
-    let y = Math.min(h * 0.82 - lines.length * lh, (h * edit.textY) / 100);
-    lines.forEach((line, i) => ctx.fillText(line, x, y + i * lh));
-    y += lines.length * lh + 14 * scale;
     ctx.font = `400 ${16 * scale}px "DM Sans",sans-serif`;
-    wrap(ctx, edit.subheadline, w - 2 * pad, 2).forEach((line, i) =>
-      ctx.fillText(line, x, y + i * 22 * scale),
+    const supportingLines = wrap(ctx, edit.subheadline, w - 2 * pad, 2);
+    const gap = supportingLines.length ? 14 * scale : 0;
+    const top = pad + (edit.showLogo ? 32 * scale : 0);
+    const bottom = h - pad - (edit.showCta ? 62 * scale : 0);
+    let fs = edit.fontSize * scale,
+      lines,
+      lh,
+      textHeight;
+    // Reserve space for both the supporting copy and the CTA in every format.
+    for (let attempt = 0; attempt < 24; attempt++) {
+      ctx.font = `700 ${fs}px "${edit.font}",sans-serif`;
+      lines = wrap(ctx, edit.headline, w - 2 * pad, 4);
+      lh = fs * 1.08;
+      textHeight =
+        lines.length * lh + gap + supportingLines.length * 22 * scale;
+      if (textHeight <= bottom - top) break;
+      fs *= 0.9;
+    }
+    let y = Math.max(
+      top,
+      Math.min(bottom - textHeight, (h * edit.textY) / 100),
+    );
+    lines.forEach((line, i) => ctx.fillText(line, x, y + i * lh, w - 2 * pad));
+    y += lines.length * lh + gap;
+    ctx.font = `400 ${16 * scale}px "DM Sans",sans-serif`;
+    supportingLines.forEach((line, i) =>
+      ctx.fillText(line, x, y + i * 22 * scale, w - 2 * pad),
     );
   }
   if (edit.showCta) {

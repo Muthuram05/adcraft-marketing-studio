@@ -98,6 +98,7 @@ export function ChannelPicker({ value, onChange }) {
         <button
           key={name}
           type="button"
+          aria-pressed={value.includes(name)}
           className={
             "channel-option " + (value.includes(name) ? "selected" : "")
           }
@@ -127,20 +128,30 @@ export function ChannelPicker({ value, onChange }) {
 }
 export function Modal({ title, description, children, onClose, wide = false }) {
   const ref = useRef(null);
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
   useEffect(() => {
     const prev = document.activeElement;
     ref.current?.focus();
     const onKey = (e) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") closeRef.current();
       if (e.key === "Tab") {
         const focusables = [
           ...ref.current.querySelectorAll(
             'button,input,select,textarea,a[href],[tabindex="0"]',
           ),
-        ].filter((x) => !x.disabled);
+        ].filter((x) => !x.disabled && x.getClientRects().length);
         const first = focusables[0],
           last = focusables.at(-1);
-        if (e.shiftKey && document.activeElement === first) {
+        if (!first) {
+          e.preventDefault();
+          return;
+        }
+        if (
+          e.shiftKey &&
+          (document.activeElement === first ||
+            document.activeElement === ref.current)
+        ) {
           e.preventDefault();
           last?.focus();
         } else if (!e.shiftKey && document.activeElement === last) {

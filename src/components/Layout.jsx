@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LayoutGrid,
   Megaphone,
@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { useApp } from "../store";
 import { Logo, navigate, Button, Modal } from "./UI";
+import { pageTitle } from "../navigation";
 const items = [
   ["/dashboard", "Overview", LayoutGrid],
   ["/campaigns", "My campaigns", Megaphone],
@@ -40,23 +41,33 @@ export default function Layout({ route, children }) {
     [notifications, setNotifications] = useState(false),
     [help, setHelp] = useState(false),
     [profile, setProfile] = useState(false);
-  const title =
-    items.find(([path]) => route.startsWith(path))?.[1] ||
-    (route.startsWith("/editor")
-      ? "Creative editor"
-      : route.startsWith("/review")
-        ? "Review & launch"
-        : route.startsWith("/create")
-          ? "Create campaign"
-          : route.startsWith("/campaign/")
-            ? "Campaign details"
-            : "Settings");
+  const title = pageTitle(route);
+  useEffect(() => {
+    setMobile(false);
+    setProfile(false);
+  }, [route]);
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setMobile(false);
+        setProfile(false);
+      }
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, []);
   return (
     <div className="app-shell">
       {mobile && (
         <div className="sidebar-scrim" onClick={() => setMobile(false)} />
       )}
-      <aside className={"sidebar " + (mobile ? "open" : "")}>
+      <aside
+        id="workspace-navigation"
+        className={"sidebar " + (mobile ? "open" : "")}
+        onClick={(event) => {
+          if (event.target.closest("a, button")) setMobile(false);
+        }}
+      >
         <div className="sidebar-logo">
           <Logo />
           <button
@@ -164,6 +175,8 @@ export default function Layout({ route, children }) {
             <button
               className="icon-button mobile-only"
               aria-label="Open menu"
+              aria-expanded={mobile}
+              aria-controls="workspace-navigation"
               onClick={() => setMobile(true)}
             >
               <Menu size={21} />

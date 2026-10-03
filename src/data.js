@@ -368,7 +368,12 @@ export function campaignTotals(campaigns) {
 export function validateCampaign(c) {
   if (!c.name?.trim()) return "Give your campaign a name.";
   if (!c.assetId) return "Choose a creative for your campaign.";
+  return validateAudience(c);
+}
+
+export function validateAudience(c) {
   if (!c.channels?.length) return "Select at least one advertising channel.";
+  if (!c.location?.trim()) return "Add a location for your audience.";
   if (!Number.isFinite(Number(c.dailyBudget)) || Number(c.dailyBudget) < 100)
     return "Set a daily budget of at least ₹100.";
   if (
@@ -378,17 +383,16 @@ export function validateCampaign(c) {
   )
     return "Choose a duration between 1 and 90 days.";
   if (
-    c.ageMin != null &&
-    (!Number.isInteger(Number(c.ageMin)) ||
-      Number(c.ageMin) < 18 ||
-      Number(c.ageMin) > 65)
+    !Number.isInteger(Number(c.ageMin)) ||
+    Number(c.ageMin) < 18 ||
+    Number(c.ageMin) > 65
   )
     return "Minimum age must be between 18 and 65.";
   if (
-    c.ageMax != null &&
-    (!Number.isInteger(Number(c.ageMax)) ||
-      Number(c.ageMax) < Number(c.ageMin) ||
-      Number(c.ageMax) > 65)
+    !Number.isInteger(Number(c.ageMax)) ||
+    Number(c.ageMax) < 18 ||
+    Number(c.ageMax) < Number(c.ageMin) ||
+    Number(c.ageMax) > 65
   )
     return "Choose a valid age range up to 65.";
   return "";
